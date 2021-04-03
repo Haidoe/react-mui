@@ -1,0 +1,24 @@
+{
+  "tabList": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Services",
+      "url": "/services"
+    },
+    {
+      "label": "The Revolution",
+      "url": "/revolution"
+    },
+    {
+      "label": "About Us",
+      "url": "/about"
+    },
+    {
+      "label": "Contact Us",
+      "url": "/contact"
+    }
+  ]
+}
