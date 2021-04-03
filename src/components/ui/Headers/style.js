@@ -29,6 +29,18 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "25px",
     height: "45px",
   },
+  menu: {
+    background: theme.palette.common.blue,
+    color: "white",
+    borderRadius: "0px",
+  },
+  menuItem: {
+    ...theme.typography.tab,
+    opacity: 0.7,
+    "&:hover": {
+      opacity: 1,
+    },
+  },
 }));
 
 export default useStyles;

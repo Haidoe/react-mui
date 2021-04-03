@@ -21,6 +21,7 @@ export default createMuiTheme({
       fontFamily: "Raleway",
       fontWeight: 700,
       fontSize: "1rem",
+      textTransform: "none",
     },
     estimate: {
       fontFamily: "Pacifico",

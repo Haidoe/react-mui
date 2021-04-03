@@ -1,0 +1,20 @@
+{
+  "servicesList": [
+    {
+      "name": "Services",
+      "url": "/services"
+    },
+    {
+      "name": "Custom Software Development",
+      "url": "/customsoftware"
+    },
+    {
+      "name": "Mobile App Development",
+      "url": "/mobileapps"
+    },
+    {
+      "name": "Website Development",
+      "url": "/websites"
+    }
+  ]
+}
