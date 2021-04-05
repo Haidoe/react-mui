@@ -4,6 +4,12 @@ const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "3em",
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "2em",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: ".5em",
+    },
   },
   logoContainer: {
     padding: 0,
@@ -13,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: "8em",
+    [theme.breakpoints.down("md")]: {
+      height: "7em",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "5em",
+    },
   },
   tabContainer: {
     marginLeft: "auto",
