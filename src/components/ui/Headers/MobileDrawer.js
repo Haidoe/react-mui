@@ -7,34 +7,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
 import useStyles from "./style";
+import { routeList } from "./servicesList.json";
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-export default function ({ activeTabIndex, onTabChange }) {
+export default function MobileDrawer({ activeTabIndex, onTabChange }) {
   const classes = useStyles();
   const [isVisible, setVisibility] = useState(true);
-  const items = [
-    {
-      name: "Home",
-      url: "/",
-    },
-    {
-      name: "Services",
-      url: "/services",
-    },
-    {
-      name: "The Revolution",
-      url: "/revolution",
-    },
-    {
-      name: "About Us",
-      url: "/about",
-    },
-    {
-      name: "Contact Us",
-      url: "/contact",
-    },
-  ];
 
   const handleOnClick = () => {
     setVisibility(!isVisible);
@@ -51,7 +30,6 @@ export default function ({ activeTabIndex, onTabChange }) {
     disableTypography: true,
   };
 
-  console.log(activeTabIndex);
   return (
     <>
       <SwipeableDrawer
@@ -64,7 +42,7 @@ export default function ({ activeTabIndex, onTabChange }) {
         keepMounted
       >
         <List disablePadding>
-          {items.map((route, index) => (
+          {routeList.map((route, index) => (
             <ListItem
               key={`${route.name}${index}`}
               {...itemProps}

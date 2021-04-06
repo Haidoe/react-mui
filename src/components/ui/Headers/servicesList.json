@@ -1,4 +1,26 @@
 {
+  "routeList": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Services",
+      "url": "/services"
+    },
+    {
+      "name": "The Revolution",
+      "url": "/revolution"
+    },
+    {
+      "name": "About Us",
+      "url": "/about"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact"
+    }
+  ],
   "servicesList": [
     {
       "name": "Services",

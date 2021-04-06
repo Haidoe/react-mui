@@ -15,7 +15,7 @@ import ElevationScroll from "./ElevationScroll";
 import MobileDrawer from "./MobileDrawer";
 import logo from "../../../assets/logo.svg";
 import useStyles from "./style";
-import { servicesList } from "./servicesList.json";
+import { routeList, servicesList } from "./servicesList.json";
 
 export default function Header(props) {
   const classes = useStyles();
@@ -81,6 +81,20 @@ export default function Header(props) {
     }
   }, [value]);
 
+  const tabProps = {
+    className: classes.tab,
+    component: Link,
+  };
+
+  const servicesProps = {
+    "aria-owns": anchorEl ? "services-menu" : undefined,
+    "aria-haspopup": anchorEl ? "true" : undefined,
+    onMouseEnter: (event) => handleServiceMenuClick(event),
+  };
+
+  const hasServicesProps = (itemName) =>
+    itemName === "Services" ? servicesProps : {};
+
   const desktop = (
     <>
       <Tabs
@@ -89,38 +103,15 @@ export default function Header(props) {
         className={classes.tabContainer}
         indicatorColor="primary"
       >
-        <Tab className={classes.tab} label="Home" component={Link} to="/" />
-
-        <Tab
-          className={classes.tab}
-          label="Services"
-          component={Link}
-          to="/services"
-          aria-owns={anchorEl ? "services-menu" : undefined}
-          aria-haspopup={anchorEl ? "true" : undefined}
-          onMouseEnter={(event) => handleServiceMenuClick(event)}
-        />
-
-        <Tab
-          className={classes.tab}
-          label="The Revolution"
-          component={Link}
-          to="/revolution"
-        />
-
-        <Tab
-          className={classes.tab}
-          label="About Us"
-          component={Link}
-          to="/about"
-        />
-
-        <Tab
-          className={classes.tab}
-          label="Contact Us"
-          component={Link}
-          to="/contact"
-        />
+        {routeList.map((item, index) => (
+          <Tab
+            key={`tab-${item.name}-${index}`}
+            {...tabProps}
+            label={item.name}
+            to={item.url}
+            {...hasServicesProps(item.name)}
+          />
+        ))}
       </Tabs>
 
       <Button
