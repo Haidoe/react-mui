@@ -12,6 +12,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/styles";
 
 import ElevationScroll from "./ElevationScroll";
+import MobileDrawer from "./MobileDrawer";
 import logo from "../../../assets/logo.svg";
 import useStyles from "./style";
 import { servicesList } from "./servicesList.json";
@@ -173,7 +174,14 @@ export default function Header(props) {
               <img src={logo} alt="company logo" className={classes.logo} />
             </Button>
 
-            {!isMobile && desktop}
+            {isMobile ? (
+              <MobileDrawer
+                activeTabIndex={value}
+                onTabChange={handleOnTabChange}
+              />
+            ) : (
+              desktop
+            )}
           </Toolbar>
         </AppBar>
       </ElevationScroll>

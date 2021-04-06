@@ -53,6 +53,35 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
     },
   },
+  mobileMenuIconContainer: {
+    marginLeft: "auto",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
+  drawerPaper: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  drawerText: {
+    ...theme.typography.tab,
+    opacity: 0.7,
+    color: "white",
+    "&:hover": {
+      opacity: 1,
+    },
+  },
+  selectedItem: {
+    "& .MuiListItemText-root": {
+      opacity: 1,
+    },
+  },
+  drawerEstimateContainer: {
+    backgroundColor: theme.palette.common.orangex,
+  },
+  drawerEstimate: {
+    ...theme.typography.estimate,
+  },
 }));
 
 export default useStyles;
