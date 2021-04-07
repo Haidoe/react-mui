@@ -42,6 +42,8 @@ export default function MobileDrawer({ activeTabIndex, onTabChange }) {
         keepMounted
       >
         <List disablePadding>
+          <div className={classes.toolbarMargin} />
+
           {routeList.map((route, index) => (
             <ListItem
               key={`${route.name}${index}`}

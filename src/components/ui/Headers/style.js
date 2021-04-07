@@ -45,6 +45,10 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.common.blue,
     color: "white",
     borderRadius: "0px",
+    zIndex: theme.zIndex.modal + 2,
+  },
+  menuRoot: {
+    zIndex: `${theme.zIndex.modal + 2} !important`,
   },
   menuItem: {
     ...theme.typography.tab,
@@ -81,6 +85,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerEstimate: {
     ...theme.typography.estimate,
+  },
+  appBar: {
+    zIndex: theme.zIndex.modal + 1,
   },
 }));
 

@@ -132,6 +132,7 @@ export default function Header(props) {
         onClose={handleServiceMenuClose}
         MenuListProps={{ onMouseLeave: handleServiceMenuClose }}
         classes={{ paper: classes.menu }}
+        className={classes.menuRoot}
         elevation={0}
       >
         {servicesList.map((item, i) => (
@@ -153,7 +154,7 @@ export default function Header(props) {
   return (
     <>
       <ElevationScroll>
-        <AppBar position="fixed">
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar disableGutters>
             <Button
               component={Link}
