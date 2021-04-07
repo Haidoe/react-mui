@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./ui/Headers";
+import Footer from "./ui/Footer";
 import theme from "./ui/Theme";
 
 function App() {
@@ -10,7 +11,11 @@ function App() {
         <Header />
 
         <Switch>
-          <Route exact path="/" component={() => <div> Home </div>} />
+          <Route
+            exact
+            path="/"
+            component={() => <div style={{ minHeight: "85vh" }}> Home </div>}
+          />
 
           <Route
             exact
@@ -56,6 +61,7 @@ function App() {
             component={() => <div> Estimate </div>}
           />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
