@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./ui/Headers";
@@ -5,10 +6,53 @@ import Footer from "./ui/Footer";
 import theme from "./ui/Theme";
 
 function App() {
+  const [tabValue, setTabValue] = useState(0);
+  const [serviceSelected, setServiceSelected] = useState(0);
+
+  useEffect(() => {
+    switch (window.location.pathname) {
+      case "/services":
+        setTabValue(1);
+        setServiceSelected(0);
+        break;
+      case "/customsoftware":
+        setTabValue(1);
+        setServiceSelected(1);
+        break;
+      case "/mobileapps":
+        setServiceSelected(2);
+        setTabValue(1);
+        break;
+      case "/websites":
+        setServiceSelected(3);
+        setTabValue(1);
+        break;
+      case "/revolution":
+        setTabValue(2);
+        break;
+      case "/about":
+        setTabValue(3);
+        break;
+      case "/contact":
+        setTabValue(4);
+        break;
+      case "/":
+        setTabValue(0);
+        break;
+      default:
+        break;
+    }
+  }, [tabValue, serviceSelected]);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header />
+        <Header
+          value={tabValue}
+          setValue={setTabValue}
+          setServiceSelected={setServiceSelected}
+          serviceSelected={serviceSelected}
+        />
 
         <Switch>
           <Route
@@ -61,7 +105,11 @@ function App() {
             component={() => <div> Estimate </div>}
           />
         </Switch>
-        <Footer />
+
+        <Footer
+          setValue={setTabValue}
+          setServiceSelected={setServiceSelected}
+        />
       </BrowserRouter>
     </ThemeProvider>
   );

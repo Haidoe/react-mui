@@ -76,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   selectedItem: {
+    opacity: 1,
     "& .MuiListItemText-root": {
       opacity: 1,
     },

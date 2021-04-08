@@ -7,7 +7,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
 import useStyles from "./style";
-import { routeList } from "./servicesList.json";
+import { mainRoutes } from "./tabSectionList";
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
@@ -44,7 +44,7 @@ export default function MobileDrawer({ activeTabIndex, onTabChange }) {
         <List disablePadding>
           <div className={classes.toolbarMargin} />
 
-          {routeList.map((route, index) => (
+          {mainRoutes.map((route, index) => (
             <ListItem
               key={`${route.name}${index}`}
               {...itemProps}

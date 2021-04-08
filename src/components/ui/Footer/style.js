@@ -16,6 +16,19 @@ const useStyles = makeStyles((theme) => ({
       width: "15em",
     },
   },
+  gridContainer: {
+    position: "absolute",
+  },
+  gridItems: {
+    margin: "3em",
+  },
+  link: {
+    fontSize: "0.75rem",
+    fontWeight: "bold",
+    color: "white",
+    fontFamily: "Arial",
+    textDecoration: "none",
+  },
 }));
 
 export default useStyles;

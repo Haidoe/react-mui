@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import AppBar from "@material-ui/core/AppBar";
@@ -15,16 +15,19 @@ import ElevationScroll from "./ElevationScroll";
 import MobileDrawer from "./MobileDrawer";
 import logo from "../../../assets/logo.svg";
 import useStyles from "./style";
-import { routeList, servicesList } from "./servicesList.json";
+import { mainRoutes, menuServicesRoutes } from "./tabSectionList";
 
-export default function Header(props) {
+export default function Header({
+  value,
+  setValue,
+  serviceSelected,
+  setServiceSelected,
+}) {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [serviceSelected, setServiceSelected] = useState(0);
 
   const handleOnTabChange = (e, val) => {
     setValue(val);
@@ -45,41 +48,6 @@ export default function Header(props) {
     setServiceSelected(service);
     setValue(1);
   };
-
-  useEffect(() => {
-    switch (window.location.pathname) {
-      case "/services":
-        setValue(1);
-        setServiceSelected(0);
-        break;
-      case "/customsoftware":
-        setValue(1);
-        setServiceSelected(1);
-        break;
-      case "/mobileapps":
-        setServiceSelected(2);
-        setValue(1);
-        break;
-      case "/websites":
-        setServiceSelected(3);
-        setValue(1);
-        break;
-      case "/revolution":
-        setValue(2);
-        break;
-      case "/about":
-        setValue(3);
-        break;
-      case "/contact":
-        setValue(4);
-        break;
-      case "/":
-        setValue(0);
-        break;
-      default:
-        break;
-    }
-  }, [value]);
 
   const tabProps = {
     className: classes.tab,
@@ -103,7 +71,7 @@ export default function Header(props) {
         className={classes.tabContainer}
         indicatorColor="primary"
       >
-        {routeList.map((item, index) => (
+        {mainRoutes.map((item, index) => (
           <Tab
             key={`tab-${item.name}-${index}`}
             {...tabProps}
@@ -135,13 +103,13 @@ export default function Header(props) {
         className={classes.menuRoot}
         elevation={0}
       >
-        {servicesList.map((item, i) => (
+        {menuServicesRoutes.map((item, i) => (
           <MenuItem
             key={i}
             component={Link}
             to={item.url}
             onClick={() => handleServiceMenuItemClick(i)}
-            classes={{ root: classes.menuItem }}
+            classes={{ root: classes.menuItem, selected: classes.selectedItem }}
             selected={serviceSelected === i && value === 1}
           >
             {item.name}
