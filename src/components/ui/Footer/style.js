@@ -29,6 +29,21 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Arial",
     textDecoration: "none",
   },
+  socialContainer: {
+    position: "absolute",
+    marginTop: "-6em",
+    right: "3em",
+    [theme.breakpoints.down("xs")]: {
+      right: "1rem",
+      marginTop: "-4em",
+    },
+  },
+  socialLogo: {
+    width: "4rem",
+    [theme.breakpoints.down("xs")]: {
+      width: "2rem",
+    },
+  },
 }));
 
 export default useStyles;

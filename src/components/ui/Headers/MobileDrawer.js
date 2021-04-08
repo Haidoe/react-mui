@@ -13,7 +13,7 @@ const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 export default function MobileDrawer({ activeTabIndex, onTabChange }) {
   const classes = useStyles();
-  const [isVisible, setVisibility] = useState(true);
+  const [isVisible, setVisibility] = useState(false);
 
   const handleOnClick = () => {
     setVisibility(!isVisible);

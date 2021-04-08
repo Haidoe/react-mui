@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: "2em",
     },
     [theme.breakpoints.down("sm")]: {
-      marginBottom: ".5em",
+      marginBottom: "1em",
     },
   },
   logoContainer: {
