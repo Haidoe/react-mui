@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./ui/Headers";
 import Footer from "./ui/Footer";
 import theme from "./ui/Theme";
+import LandingPage from "./pages/Landing";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
@@ -55,11 +56,7 @@ function App() {
         />
 
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={() => <div style={{ minHeight: "85vh" }}> Home </div>}
-          />
+          <Route exact path="/" component={LandingPage} />
 
           <Route
             exact
