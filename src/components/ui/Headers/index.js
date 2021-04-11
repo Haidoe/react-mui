@@ -16,18 +16,16 @@ import MobileDrawer from "./MobileDrawer";
 import logo from "../../../assets/logo.svg";
 import useStyles from "./style";
 import { mainRoutes, menuServicesRoutes } from "./tabSectionList";
+import { useRouteContext, useMenuTabContext } from "../../Provider";
 
-export default function Header({
-  value,
-  setValue,
-  serviceSelected,
-  setServiceSelected,
-}) {
+export default function Header() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [value, setValue] = useRouteContext();
+  const [serviceSelected, setServiceSelected] = useMenuTabContext();
 
   const handleOnTabChange = (e, val) => {
     setValue(val);

@@ -8,16 +8,13 @@ import { mainRoutes } from "../Headers/tabSectionList";
 import facebook from "../../../assets/facebook.svg";
 import twitter from "../../../assets/twitter.svg";
 import instagram from "../../../assets/instagram.svg";
+import { useRouteContext, useMenuTabContext } from "../../Provider";
 
-const ItemLink = ({
-  item,
-  setValue,
-  index,
-  childIndex,
-  setServiceSelected,
-}) => {
+const ItemLink = ({ item, index, childIndex }) => {
   const classes = useStyles();
   const { name, url } = item;
+  const setValue = useRouteContext()[1];
+  const setServiceSelected = useMenuTabContext()[1];
 
   const handleClick = () => {
     if (index === 1) {
@@ -40,7 +37,7 @@ const ItemLink = ({
   );
 };
 
-const Footer = ({ setValue, setServiceSelected }) => {
+const Footer = () => {
   const classes = useStyles();
 
   return (
@@ -54,16 +51,14 @@ const Footer = ({ setValue, setServiceSelected }) => {
               key={`${route.name}-footer-item`}
             >
               <Grid container direction="column" spacing={2}>
-                <ItemLink item={route} setValue={setValue} index={index} />
+                <ItemLink item={route} index={index} />
 
                 {route.child &&
                   route.child.map((item, childIndex) => (
                     <ItemLink
                       key={`${route.name}-${item.name}-footer-item`}
-                      setValue={setValue}
                       index={index}
                       childIndex={childIndex}
-                      setServiceSelected={setServiceSelected}
                       item={item}
                     />
                   ))}
