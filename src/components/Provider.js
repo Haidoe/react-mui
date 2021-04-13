@@ -12,16 +12,14 @@ export const useMenuTabContext = () => {
 };
 
 const ThemeProvider = ({ children }) => {
-  // Zero is the home default route index
-  const activeRouteTabIndex = useState(0);
-  const serviceMenuActiveIndex = useState(0);
+  const [tabValue, setTabValue] = useState(0);
+  const [serviceSelected, setServiceSelected] = useState(0);
 
-  const [tabValue, setTabValue] = activeRouteTabIndex;
-  const [serviceSelected, setServiceSelected] = serviceMenuActiveIndex;
-  const activePath = window.location.pathname;
+  const activeRouteTabIndex = [tabValue, setTabValue];
+  const serviceMenuActiveIndex = [serviceSelected, setServiceSelected];
 
   useEffect(() => {
-    switch (activePath) {
+    switch (window.location.pathname) {
       case "/services":
         setTabValue(1);
         setServiceSelected(0);
@@ -53,7 +51,7 @@ const ThemeProvider = ({ children }) => {
       default:
         break;
     }
-  }, [tabValue, serviceSelected, activePath]);
+  }, [tabValue, serviceSelected]);
 
   return (
     <RouteContext.Provider value={activeRouteTabIndex}>

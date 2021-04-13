@@ -1,8 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
+import revolutionBg from "../../../assets/repeatingBackground.svg";
 
 const useStyles = makeStyles((theme) => ({
   heroContainer: {
     minWidth: "21.5em",
+    [theme.breakpoints.down("xs")]: {
+      minWidth: "100%",
+    },
   },
   firstText: {
     fontFamily: "Raleway",
@@ -12,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
       marginTop: "1em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.5em",
     },
   },
   estimateBtn: {
@@ -28,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 0,
       maxWidth: "20em",
     },
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: 0,
+      maxWidth: "18em",
+      minWidth: "18em",
+    },
   },
   serviceBlockContainer: {
     marginTop: "16em",
@@ -40,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.blue,
     fontWeight: 700,
     fontSize: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.5rem",
+    },
   },
   subtitle1: {
     fontFamily: "Roboto",
@@ -47,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.grey,
     [theme.breakpoints.down("sm")]: {
       padding: " 5px 25px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
     },
   },
   celebrationTxt: {
@@ -58,6 +76,47 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
       marginTop: "2em",
+    },
+  },
+  revolutionContainer: {
+    height: "80em",
+    marginTop: "12em",
+    [theme.breakpoints.down("sm")]: {
+      height: "50em",
+    },
+  },
+  revolutionBg: {
+    backgroundImage: `url(${revolutionBg})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100%",
+    width: "100%",
+  },
+  revolutionBox: {
+    textAlign: "center",
+  },
+  revCard: {
+    position: "absolute",
+    borderRadius: 15,
+    boxShadow: theme.shadows[10],
+    padding: "7em",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2em",
+      margin: "1em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "1em",
+    },
+  },
+  revolutionTitle: {
+    fontFamily: "Pacifico",
+    color: theme.palette.common.blue,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2rem",
     },
   },
 }));
