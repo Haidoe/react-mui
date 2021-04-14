@@ -1,8 +1,9 @@
 import Grid from "@material-ui/core/Grid";
 import HeroBlock from "./HeroBlock";
 import ServiceBlock from "./ServiceBlock";
-import useStyles from "./styles";
 import RevolutionBlock from "./RevolutionBlock";
+import InfoBlock from "./InfoBlock";
+import useStyles from "./styles";
 
 export default function LandingPage() {
   const classes = useStyles();
@@ -19,6 +20,10 @@ export default function LandingPage() {
 
       <Grid item>
         <RevolutionBlock />
+      </Grid>
+
+      <Grid item>
+        <InfoBlock />
       </Grid>
     </Grid>
   );

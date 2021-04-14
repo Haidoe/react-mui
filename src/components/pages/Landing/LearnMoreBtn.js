@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function LearnMoreBtn({ url = "" }) {
+function LearnMoreBtn({ url = "", color = "primary" }) {
   const classes = useStyles();
   return (
     <Button
@@ -23,6 +23,10 @@ function LearnMoreBtn({ url = "" }) {
       component={Link}
       to={url}
       className={classes.learnMoreBtn}
+      style={{
+        color: color === "white" ? "white" : undefined,
+        border: color === "white" ? "2px solid white" : undefined,
+      }}
     >
       Learn more
       <ArrowRightAltIcon className={classes.iconBtn} />

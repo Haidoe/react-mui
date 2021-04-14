@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import revolutionBg from "../../../assets/repeatingBackground.svg";
+import infoBlockBg from "../../../assets/infoBackground.svg";
 
 const useStyles = makeStyles((theme) => ({
   heroContainer: {
@@ -117,6 +118,37 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "2rem",
+    },
+  },
+  infoBBg: {
+    backgroundImage: `url(${infoBlockBg})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100%",
+    width: "100%",
+  },
+  infoContainer: {
+    position: "absolute",
+    maxWidth: "2560px",
+  },
+  infoItem: {
+    padding: "25px",
+    color: "white",
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.75em",
+    },
+  },
+  infoTitle: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.75rem",
+    },
+  },
+  infoSubtitle: {
+    fontFamily: "Roboto",
+    fontSize: "1.25rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
     },
   },
 }));
