@@ -4,7 +4,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import animationData from "../../../animations/landinganimation/data";
 import useStyles from "./styles";
-import LearnMoreBtn from "./LearnMoreBtn";
+import LearnMoreBtn from "../../LearnMoreBtn";
+import EstimateBtn from "../../EstimateBtn";
 
 function HeroBlock() {
   const classes = useStyles();
@@ -28,13 +29,9 @@ function HeroBlock() {
 
         <Grid container justify="center">
           <Grid item>
-            <Button
-              color="secondary"
-              variant="contained"
-              className={classes.estimateBtn}
-            >
-              Free Estimate
-            </Button>
+            <div style={{ marginRight: "2em" }}>
+              <EstimateBtn />
+            </div>
           </Grid>
 
           <Grid item>

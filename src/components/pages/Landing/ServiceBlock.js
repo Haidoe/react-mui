@@ -7,7 +7,7 @@ import customSoftwareIcon from "../../../assets/Custom Software Icon.svg";
 import mobileIcon from "../../../assets/mobileIcon.svg";
 import websiteIcon from "../../../assets/websiteIcon.svg";
 
-import LearnMoreBtn from "./LearnMoreBtn";
+import LearnMoreBtn from "../../LearnMoreBtn";
 import useStyles from "./styles";
 
 const ServiceBlock = () => {
