@@ -32,7 +32,7 @@ const RevolutionBlock = () => {
             </Grid>
 
             <Grid item>
-              <LearnMoreBtn />
+              <LearnMoreBtn url="/revolution" />
             </Grid>
           </Grid>
         </CardContent>

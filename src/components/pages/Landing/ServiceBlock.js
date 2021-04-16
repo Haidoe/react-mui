@@ -44,7 +44,7 @@ const ServiceBlock = () => {
             <span className={classes.celebrationTxt}> celebration </span>
           </Typography>
 
-          <LearnMoreBtn />
+          <LearnMoreBtn url="/customsoftware" />
         </Grid>
 
         <Grid item>
@@ -87,7 +87,7 @@ const ServiceBlock = () => {
             <br /> with either mobile platform
           </Typography>
 
-          <LearnMoreBtn />
+          <LearnMoreBtn url="/mobileapps" />
         </Grid>
 
         <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
@@ -131,7 +131,7 @@ const ServiceBlock = () => {
             built for speed.
           </Typography>
 
-          <LearnMoreBtn />
+          <LearnMoreBtn url="/websites" />
         </Grid>
 
         <Grid item className={classes.iconContainer}>

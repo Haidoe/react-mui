@@ -91,7 +91,7 @@ const CTABlock = () => {
           <Typography variant="subtitle1" className={classes.subtitle}>
             Take advantage of the 21st Century.
           </Typography>
-          <LearnMoreBtn />
+          <LearnMoreBtn url="/revolution" />
         </Grid>
         <Grid item className={classes.estimate}>
           <EstimateBtn size="large" />

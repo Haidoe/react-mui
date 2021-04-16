@@ -4,7 +4,8 @@ import Header from "./ui/Headers";
 import Footer from "./ui/Footer";
 import theme from "./ui/Theme";
 import LandingPage from "./pages/Landing";
-import Example from "./ui/Test/An";
+import ServicesPage from "./pages/Services";
+import CustomSoftwarePage from "./pages/Services/subs/CustomSoftware";
 import ContextProvider from "./Provider";
 
 function App() {
@@ -17,12 +18,12 @@ function App() {
           <Switch>
             <Route exact path="/" component={LandingPage} />
 
-            <Route exact path="/services" component={Example} />
+            <Route exact path="/services" component={ServicesPage} />
 
             <Route
               exact
               path="/customsoftware"
-              component={() => <div> Custom Software </div>}
+              component={CustomSoftwarePage}
             />
 
             <Route
