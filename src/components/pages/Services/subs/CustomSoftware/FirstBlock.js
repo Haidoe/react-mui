@@ -10,7 +10,7 @@ import { useTheme } from "@material-ui/styles";
 const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: "center",
-    marginTop: "1em",
+    margin: "1em 2em",
   },
   title: {
     fontFamily: "Raleway",

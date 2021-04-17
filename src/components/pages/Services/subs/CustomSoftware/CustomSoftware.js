@@ -4,11 +4,11 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import IconButton from "@material-ui/core/IconButton";
 import FirstBlock from "./FirstBlock";
+import SecondBlock from "./SecondBlock";
+import ThirdBlock from "./ThirdBlock";
 
 const useStyles = makeStyles((theme) => ({
-  transitionContainer: {
-    // backgroundColor: "red",
-  },
+  transitionContainer: {},
 }));
 
 const CustomSoftware = () => {
@@ -33,6 +33,10 @@ const CustomSoftware = () => {
       </Grid>
 
       <FirstBlock />
+
+      <SecondBlock />
+
+      <ThirdBlock />
     </Grid>
   );
 };
