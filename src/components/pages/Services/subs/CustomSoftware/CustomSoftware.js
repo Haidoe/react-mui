@@ -1,35 +1,16 @@
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import IconButton from "@material-ui/core/IconButton";
+import TransitionBlock from "../../TransitionBlock";
 import FirstBlock from "./FirstBlock";
 import SecondBlock from "./SecondBlock";
 import ThirdBlock from "./ThirdBlock";
-
-const useStyles = makeStyles((theme) => ({
-  transitionContainer: {},
-}));
+import CTABlock from "../../../../CTABlock/CTABlock";
+import FourthBlock from "./FourthBlock";
 
 const CustomSoftware = () => {
-  const classes = useStyles();
-
   return (
     <Grid container direction="column">
-      <Grid item className={classes.transitionContainer}>
-        <Grid container justify="space-between">
-          <Grid item>
-            <IconButton>
-              <ArrowBackIcon />
-            </IconButton>
-          </Grid>
-
-          <Grid item>
-            <IconButton>
-              <ArrowForwardIcon />
-            </IconButton>
-          </Grid>
-        </Grid>
+      <Grid item>
+        <TransitionBlock />
       </Grid>
 
       <FirstBlock />
@@ -37,6 +18,12 @@ const CustomSoftware = () => {
       <SecondBlock />
 
       <ThirdBlock />
+
+      <FourthBlock />
+
+      <Grid item>
+        <CTABlock />
+      </Grid>
     </Grid>
   );
 };

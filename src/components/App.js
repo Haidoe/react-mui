@@ -6,6 +6,7 @@ import theme from "./ui/Theme";
 import LandingPage from "./pages/Landing";
 import ServicesPage from "./pages/Services";
 import CustomSoftwarePage from "./pages/Services/subs/CustomSoftware";
+import MobileAppPage from "./pages/Services/subs/MobileApp";
 import ContextProvider from "./Provider";
 
 function App() {
@@ -26,11 +27,7 @@ function App() {
               component={CustomSoftwarePage}
             />
 
-            <Route
-              exact
-              path="/mobileapps"
-              component={() => <div> Mobile Apps </div>}
-            />
+            <Route exact path="/mobileapps" component={MobileAppPage} />
 
             <Route
               exact
