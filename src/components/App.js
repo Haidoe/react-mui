@@ -8,6 +8,7 @@ import ServicesPage from "./pages/Services";
 import CustomSoftwarePage from "./pages/Services/subs/CustomSoftware";
 import MobileAppPage from "./pages/Services/subs/MobileApp";
 import ContextProvider from "./Provider";
+import WebDev from "./pages/Services/subs/Website/Website";
 
 function App() {
   return (
@@ -29,11 +30,7 @@ function App() {
 
             <Route exact path="/mobileapps" component={MobileAppPage} />
 
-            <Route
-              exact
-              path="/websites"
-              component={() => <div> Websites </div>}
-            />
+            <Route exact path="/websites" component={WebDev} />
 
             <Route
               exact
