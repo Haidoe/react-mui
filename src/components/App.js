@@ -9,6 +9,7 @@ import CustomSoftwarePage from "./pages/Services/subs/CustomSoftware";
 import MobileAppPage from "./pages/Services/subs/MobileApp";
 import ContextProvider from "./Provider";
 import WebDev from "./pages/Services/subs/Website/Website";
+import Revolution from "./pages/Revolution/Revolution";
 
 function App() {
   return (
@@ -32,11 +33,7 @@ function App() {
 
             <Route exact path="/websites" component={WebDev} />
 
-            <Route
-              exact
-              path="/revolution"
-              component={() => <div> Revolution </div>}
-            />
+            <Route exact path="/revolution" component={Revolution} />
 
             <Route
               exact
