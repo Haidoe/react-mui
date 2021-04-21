@@ -1,27 +1,60 @@
+import Lottie from "react-lottie";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import visionIcon from "../../../assets/vision.svg";
+import animationData from "../../../animations/technologyAnimation/data";
+import CTABlock from "../../CTABlock/CTABlock";
 
 const useStyles = makeStyles((theme) => ({
-  title: {},
-  subtitle: {},
+  title: {
+    fontFamily: "Raleway",
+    fontWeight: 700,
+    color: theme.palette.common.blue,
+    marginBottom: "1em 0",
+  },
+  subtitle: {
+    fontFamily: "Roboto",
+    color: theme.palette.common.grey,
+    marginBottom: "1em",
+  },
+  container: {
+    maxWidth: "2560px",
+    margin: "0 auto",
+  },
+  item: {
+    width: "1280px",
+    margin: "1em auto",
+  },
 }));
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData,
+  rendererSettings: {
+    preserveAspectRation: "xMidYMid slice",
+  },
+};
+
 const Revolution = () => {
   const classes = useStyles();
 
   return (
-    <Grid container direction="column">
-      <Grid item>
-        <Typography variant="h2">The Revolution</Typography>
+    <Grid container direction="column" className={classes.container}>
+      <Grid item className={classes.item}>
+        <Typography variant="h3" className={classes.title}>
+          The Revolution
+        </Typography>
       </Grid>
 
-      <Grid item>
-        <Grid container>
-          <Grid item>
-            <img alt="vision icon" />
+      <Grid item className={classes.item}>
+        <Grid container alignItems="center">
+          <Grid item sm={6}>
+            <img src={visionIcon} alt="vision icon" width="500px" />
           </Grid>
 
-          <Grid item>
+          <Grid item sm={6}>
             <Typography variant="h5" className={classes.title}>
               Vision
             </Typography>
@@ -63,9 +96,9 @@ const Revolution = () => {
         </Grid>
       </Grid>
 
-      <Grid item>
+      <Grid item className={classes.item}>
         <Grid container>
-          <Grid item>
+          <Grid item xs={6}>
             <Typography variant="h5" className={classes.title}>
               Vision
             </Typography>
@@ -105,10 +138,14 @@ const Revolution = () => {
             </Typography>
           </Grid>
 
-          <Grid item>
-            <img alt="technology icon" />
+          <Grid item xs={6}>
+            <Lottie options={defaultOptions} height="500px" width="100%" />
           </Grid>
         </Grid>
+      </Grid>
+
+      <Grid item>
+        <CTABlock />
       </Grid>
     </Grid>
   );
